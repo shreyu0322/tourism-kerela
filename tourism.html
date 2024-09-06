@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STYLE.CSS">
+    <title>KERALA TOURISM</title>
+</head>
+<body>
+    <script>
+        function opentab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-contents");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-links");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active-link", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active-link";
+        }
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+    
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill out all fields');
+                return false;
+            }
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.jpg" class="logo" width="200px">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Kerala</a></li>
+                    <li><a href="#Tourist_Places">Tourist Places</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#google-map">Map</a></li>
+                    <li><a href="#section5">VCE_Website</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>WELCOME TO KERALA TOURISM</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="bg4.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Kerala</h1>
+                    <p>
+                        Kerala is located on the south-western tip of India.
+                        The land of Keralaputras or Keram (coconut trees), straddled by the evergreen Western Ghats
+                        on one side and the fathomless Arabian Sea on the other, is as different from the rest of India as pepper is to chill. This is this favourable geography which makes Kerala unique.<br>
+                        India enjoys this unique geographical feature that has made it one of the most sought-after tourist destinations. Fondly referred to as 'God's Own Country'.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('temples')">Temples</p>
+                        <p class="tab-links" onclick="opentab('Hill_stations')">Hill_Stations</p>
+                        <p class="tab-links" onclick="opentab('beaches')">Beaches</p>
+                        <p class="tab-links" onclick="opentab('church')">Church</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="temples">
+                        <ul>
+                            <li><span>Tiruvananthapuram</span></li>
+                            <li><span>Guruvayyur</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Hill_stations">
+                        <ul>
+                            <li><span>Munnar</span></li>
+                            <li><span>Wayanad</span></li>
+                            <li><span>Thekkady</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="beaches">
+                        <ul>
+                            <li><span>Allepy</span></li>
+                            <li><span>Varkala</span></li>
+                            <li><span>Kovalam</span></li>
+                            <li><span>Kochi</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="church">
+                        <ul>
+                            <li><span>Santa Cruz Cathedral Basilica</span></li>
+                            <li><span>Our Lady of Dolours Basilica</span></li>
+                            <li><span>St. Francis CIS Church</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+
+    <div id="Tourist_Places">
+        <div class="container">
+            <h1 class="sub-title">Tourist places</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="hill station.jpg" alt="">
+                    <div class="layer">
+                        <h3>Hill Station</h3>
+                        <p>"Kerala's hill stations captivate with misty mountains, vibrant tea gardens, spice plantations, and tranquil lakes, offering serene natural beauty".</p>
+                        <a href="#"> <i class="fa-solid fa-right-to-bracket"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="temple.jpg" alt="">
+                    <div class="layer">
+                        <h3>Temples</h3>
+                        <p>"Kerala's temples boast exquisite architecture, intricate carvings, vibrant rituals, and spiritual ambiance, harmonizing divine aesthetics with cultural richness."</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="beach.jpg" alt="">
+                    <div class="layer">
+                        <h3>Beaches</h3>
+                        <p>"Kerala's beaches captivate with golden sands, swaying coconut palms, azure waters, and vibrant sunsets, creating a serene paradise for relaxation."</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="church .jpg" alt="">
+                    <div class="layer">
+                        <h3>Church</h3>
+                        <p>"Kerala's churches boast exquisite architecture, vibrant murals, and a serene ambiance, blending spirituality with the state's rich cultural heritage."</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-phone"></i>contact@xyz.com</p>
+                    <p><i class="fa-duotone fa-phone"></i>123456890</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                        <textarea id="message" name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2" onclick="validateForm()">Submit</button>                        
+                    </form>
+                </div>    
+            </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+    <div id="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15752722.309640845!2d74.82911907006243!3d10.34184954803885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0874e160d5d1c7%3A0xc517581482f5a7c7!2sKerala!5e0!3m2!1sen!2sin!4v1646889093866!5m2!1sen!2sin" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        scrolling="yes">
+        </iframe>
+    </div>
+    <section id="section5">
+        <h2> Vasavi college website link</h2>
+        <h2> <a href="https://www.vce.ac.in/" target="_blank">VCE_Website</a> </h2>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </section>  
+
+    <script>
+        document.querySelectorAll('.back-to-top').forEach(link => {
+            link.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
